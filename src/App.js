@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Login, Register } from "./Login/index";
+import { Login, Register } from "./Components/index";
 
 class App extends React.Component {
   constructor(props) {

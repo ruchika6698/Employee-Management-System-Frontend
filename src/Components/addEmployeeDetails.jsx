@@ -1,31 +1,26 @@
 import React from "react";
 import loginImg from "../loginlogo.png";
 
-export class Register extends React.Component {
+export class AddEmployeeDetails extends React.Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Register</div>
+        <div className="header">AddEmployeeDetails</div>
         <div className="content">
           <div className="image">
             <img src={loginImg} />
           </div>
           <div className="form">
             <div className="form-group">
-              <label htmlFor="EmployeeName">Employee Name</label>
+              <label htmlFor="EmployeeName">EmployeeName</label>
               <input type="text" name="EmployeeName" placeholder="Employee Name" />
             </div>
             <div className="form-group">
               <label htmlFor="Username">Username</label>
               <input type="text" name="Username" placeholder="Username" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Password">Password</label>
-              <input type="text" name="Password" placeholder="Password" />
             </div>
             <div className="form-group">
               <label htmlFor="Gender">Gender</label>
@@ -36,7 +31,7 @@ export class Register extends React.Component {
               <input type="text" name="City" placeholder="City" />
             </div>
             <div className="form-group">
-              <label htmlFor="EmailID">Email Address</label>
+              <label htmlFor="EmailID">EmailID</label>
               <input type="text" name="EmailID" placeholder="Email Address" />
             </div>
             <div className="form-group">
@@ -44,7 +39,7 @@ export class Register extends React.Component {
               <input type="text" name="Designation" placeholder="Designation" />
             </div>
             <div className="form-group">
-              <label htmlFor="WorkingExperience">Working Experience</label>
+              <label htmlFor="WorkingExperience">WorkingExperience</label>
               <input type="text" name="WorkingExperience" placeholder="Working Experience" />
             </div>
           </div>
