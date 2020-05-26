@@ -26,8 +26,11 @@ export class Login extends React.Component {
       Username:this.state.Username,
       Password:this.state.Password
     }
-    service.login(requestData).then((data)=>{
-      console.log(" succesfull login ", data);
+    service.login(requestData).then((json)=>{
+      console.log("responce data==>",json);
+    if(json.data.status==='Success'){  
+    alert('Login Sucessfull !!');  
+    }   
       
     }).catch((err)=>{
       console.log(err);
