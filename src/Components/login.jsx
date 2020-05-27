@@ -1,6 +1,7 @@
 import React from "react";
 import loginImg from "../loginlogo.png";
 import empService from '../Services/EmployeeService'
+import {Link } from "react-router-dom";
 let service = new empService()
 
 export class Login extends React.Component {
@@ -27,6 +28,7 @@ export class Login extends React.Component {
       Password:this.state.Password
     }
     service.login(requestData).then((json)=>{
+      this.props.history.push("/dashboard");
       console.log("responce data==>",json);
     if(json.data.status==='Success'){  
     alert('Login Sucessfull !!');  
@@ -48,13 +50,13 @@ export class Login extends React.Component {
             <img src={loginImg} />
           </div>
           <div className="form">
-            <div className="form-group">
+            <div className="form-group" >
               <label htmlFor="Username">Username   </label>
-              <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username}  placeholder="Username" />
+              <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username}  placeholder="Enter Username" />
             </div>
-            <div className="form-group">
+            <div className="form-group" >
               <label htmlFor="Password">Password    </label>
-              <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password}  placeholder="Password" />
+              <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password}  placeholder="Enter Password" />
             </div>
           </div>
         </div>
@@ -62,6 +64,9 @@ export class Login extends React.Component {
           <button type="button" onClick={this.login} className="btn">
             Sign In
           </button>
+          <Link to="/register"><button type="button" className="btn">
+            Register
+          </button></Link>
         </div>
       </div>
     );

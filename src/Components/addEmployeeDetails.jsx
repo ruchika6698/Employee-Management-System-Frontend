@@ -58,27 +58,27 @@ export class AddEmployeeDetails extends React.Component {
           <div className="form">
           <div className="form-group">
               <label htmlFor="ID">ID</label>
-              <input type="text" name="ID" onChange={this.handleChange} value={this.state.ID} placeholder="Employee ID" />
+              <input type="text" name="ID" onChange={this.handleChange} value={this.state.ID} placeholder="Enter Employee ID" />
             </div>
             <div className="form-group">
               <label htmlFor="EmployeeName">EmployeeName</label>
-              <input type="text" name="EmployeeName" onChange={this.handleChange} value={this.state.EmployeeName} placeholder="Employee Name" />
+              <input type="text" name="EmployeeName" onChange={this.handleChange} value={this.state.EmployeeName} placeholder="Enter Employee Name" />
             </div>
             <div className="form-group">
               <label htmlFor="Username">Username</label>
-              <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Username" />
+              <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" />
             </div>
             <div className="form-group">
               <label htmlFor="Gender">Gender</label>
-              <input type="text" name="Gender" onChange={this.handleChange} value={this.state.Gender} placeholder="Gender" />
+              <input type="text" name="Gender" onChange={this.handleChange} value={this.state.Gender} placeholder="Enter Gender" />
             </div>
             <div className="form-group">
               <label htmlFor="City">City</label>
-              <input type="text" name="City" onChange={this.handleChange} value={this.state.City} placeholder="City" />
+              <input type="text" name="City" onChange={this.handleChange} value={this.state.City} placeholder="Enter City" />
             </div>
             <div className="form-group">
               <label htmlFor="EmailID">EmailID</label>
-              <input type="text" name="EmailID" onChange={this.handleChange} value={this.state.EmailID} placeholder="Email Address" />
+              <input type="text" name="EmailID" onChange={this.handleChange} value={this.state.EmailID} placeholder="Enter Email Address" />
             </div>
             <div className="form-group">
               <label htmlFor="Designation">Designation</label>
@@ -86,7 +86,7 @@ export class AddEmployeeDetails extends React.Component {
             </div>
             <div className="form-group">
               <label htmlFor="WorkingExperience">WorkingExperience</label>
-              <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Working Experience" />
+              <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Enter Working Experience" />
             </div>
           </div>
         </div>

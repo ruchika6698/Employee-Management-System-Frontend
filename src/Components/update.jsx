@@ -1,5 +1,4 @@
 import React from "react";
-import loginImg from "../loginlogo.png";
 import empService from '../Services/EmployeeService'
 let service = new empService()
 
@@ -50,19 +49,16 @@ export class Update extends React.Component {
     console.log(this.state);
     
   }  
-  update=(ID,e) => {
+  update=(ID) => {
+    console.log("Employee ID",this.state.ID);
     console.log(this.state);
     let requestData ={
-      ID:this.state.ID,
-      EmployeeName:this.state.EmployeeName,
-      Username:this.state.Username,
-      Gender:this.state.Gender,
       City:this.state.City,
-      EmailID:this.state.EmailID,
       Designation:this.state.Designation,
       WorkingExperience:this.state.WorkingExperience
     }
-    service.update(requestData).then((data)=>{
+    service.update(this.state.ID,requestData).then((data)=>{
+      this.props.history.push("/dashboard");
       console.log(" Employee Details Successfully Updated", data);
       
     }).catch((err)=>{
@@ -77,9 +73,6 @@ export class Update extends React.Component {
       <div className="base-container" ref={this.props.containerRef}>
         <div className="header">Update Employee Details</div>
         <div className="content">
-          <div className="image">
-            <img src={loginImg} />
-          </div>
           <div className="form">
           <div className="form-group">
               <label htmlFor="ID">ID</label>
@@ -116,7 +109,7 @@ export class Update extends React.Component {
           </div>
         </div>
         <div className="footer">
-          <button type="button" onClick={this.Update} className="btn">
+          <button type="button" onClick={this.update} className="btn">
             Submit
           </button>
         </div>

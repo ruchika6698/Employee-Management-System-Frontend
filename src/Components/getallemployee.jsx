@@ -63,16 +63,16 @@ export class Getallemployee extends React.Component {
   render() {
     return (
       <TableContainer component={Paper}> 
-        <Table stickyHeader  aria-label="sticky table">  
+        <Table stickyHeader aria-label="sticky table">  
           <TableHead>  
             <TableRow>  
               <TableCell>id</TableCell>  
-              <TableCell align="right">employeeName</TableCell>  
-              <TableCell align="right">username</TableCell>  
-              <TableCell align="right">gender</TableCell>  
-              <TableCell align="right">city</TableCell>  
-              <TableCell align="right">emailID</TableCell>  
-              <TableCell align="right">designation</TableCell>  
+              <TableCell align="right" font-size="22px" >employeeName</TableCell>  
+              <TableCell align="right" >username</TableCell>  
+              <TableCell align="right" >gender</TableCell>  
+              <TableCell align="right" >city</TableCell>  
+              <TableCell align="right" >emailID</TableCell>  
+              <TableCell align="right" >designation</TableCell>  
               <TableCell align="right" >workingExperience</TableCell> 
               <TableCell align="right" >Get Data </TableCell>
               <TableCell align="right" >Update</TableCell> 

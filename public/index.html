@@ -15,6 +15,9 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,19 +27,42 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <!-- /*<title> Employee Management System</title>
-    <style> body{
-      background:url("/employeebackground.jpg") no-repeat center center fixed;
-      -webkit-background-size:cover;
-      -moz-background-size:cover;
-      -o-background-size:cover;
-      background-size:cover;
+    <title> Employee Management System</title>
+    <style>
+      
+      .navbar-custom {
+      background:rgb(4, 4, 83 );  
+      color: #FAFAFC;
+      font-size:26;
+       font-weight: bold;
+      }
+    .navbar-custom .navbar-header>a {
+      color: #FAFAFC;
+      font-size:26;
+     }
+    .navbar-custom .navbar-nav>li>a {
+       color: #FAFAFC;   
+      font-size:26;
+      }
+    .navbar-custom .navbar-nav>li>a:hover {
+       color: grey;  
     }
-    </style>*/ -->
 
+   </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+  <nav class="navbar navbar-default navbar-custom" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Employee Management System</a>
+    </div>        
+    <ul class="nav navbar-nav">    
+      <li><a href="/">Login</a></li>
+    </ul>
+   </div>
+  </nav> 
+      
+  <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -50,3 +76,4 @@
     -->
   </body>
 </html>
+
