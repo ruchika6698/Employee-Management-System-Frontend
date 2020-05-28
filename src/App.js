@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Components/style.css";
+import "./Components/table.css";
 import { BrowserRouter as Router, Route,Redirect } from 'react-router-dom';
 import { Login} from './Components/login'
 import { Register} from './Components/register'

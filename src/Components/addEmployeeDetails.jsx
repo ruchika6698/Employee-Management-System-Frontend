@@ -39,8 +39,8 @@ export class AddEmployeeDetails extends React.Component {
       WorkingExperience:this.state.WorkingExperience
     }
     service.addEmployeeDetails(requestData).then((data)=>{
+      this.props.history.push("/");
       console.log(" Add Employee Details Successfully ", data);
-      
     }).catch((err)=>{
       console.log(err);
       
