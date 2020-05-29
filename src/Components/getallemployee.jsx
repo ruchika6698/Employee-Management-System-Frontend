@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';  
 import {Link } from "react-router-dom";
 import { Update} from './update'
+import "../CSS/table.css";
 import empService from '../Services/EmployeeService'
 let service = new empService();
 
@@ -18,7 +19,7 @@ export class Getallemployee extends React.Component {
       Employee: []
     }
   }
-
+  //for fetching Employee list from database
  componentDidMount()
  {
    this.getallemployee();
@@ -34,12 +35,14 @@ export class Getallemployee extends React.Component {
     })
   }
 
+  //for fetching Employee data from database and update data
   update=(obj)=>{
     console.log("In update Method",obj);
     this.props.history.push('/update'+obj);
 
   }
 
+  //for fetching Employee data from database by ID
   getspecificemployee= (ID) =>{  
     console.log("Employee ID",ID);
     service.getspecificemployee(ID).then((json) => {  
@@ -50,6 +53,7 @@ export class Getallemployee extends React.Component {
     })  
   }  
 
+  //for delete Employee data from database by ID
   delete= (ID) =>{  
     console.log("Delete ID",ID);
     service.delete(ID).then((json) => {  
@@ -63,18 +67,23 @@ export class Getallemployee extends React.Component {
   render() {
     return (
       <TableContainer component={Paper}> 
+      <h2 align="right"> <Link to="/addemployee" align="right"><button type="button" className="btn btn-success" >
+            Add Employee
+          </button></Link>  <Link to="/" align="right"><button type="button" className="btn btn-primary" >
+           Sign out
+          </button></Link></h2>
       <h2 align="center">Employee List </h2>
         <Table stickyHeader aria-label="sticky table" id='Employee'>  
           <TableHead>  
             <TableRow>  
-              <TableCell>id</TableCell>  
-              <TableCell align="right" >employeeName</TableCell>  
-              <TableCell align="right" >username</TableCell>  
-              <TableCell align="right" >gender</TableCell>  
-              <TableCell align="right" >city</TableCell>  
-              <TableCell align="right" >emailID</TableCell>  
-              <TableCell align="right" >designation</TableCell>  
-              <TableCell align="right" >workingExperience</TableCell> 
+              <TableCell>ID</TableCell>  
+              <TableCell align="right" >Employee Name</TableCell>  
+              <TableCell align="right" >Username</TableCell>  
+              <TableCell align="right" >Gender</TableCell>  
+              <TableCell align="right" >City</TableCell>  
+              <TableCell align="right" >Email Address</TableCell>  
+              <TableCell align="right" >Designation</TableCell>  
+              <TableCell align="right" >Working Experience</TableCell> 
               <TableCell align="right" >Get Data </TableCell>
               <TableCell align="right" >Update</TableCell> 
               <TableCell align="right" >Delete</TableCell>
@@ -95,7 +104,7 @@ export class Getallemployee extends React.Component {
                   <TableCell align="right">{d.emailID}</TableCell>  
                   <TableCell align="right">{d.designation}</TableCell>  
                   <TableCell align="right">{d.workingExperience}</TableCell>  
-                  <TableCell align="right"><button type="button" onClick={()=>this.getspecificemployee(d.id)} className="btn btn-danger"> Get Data</button></TableCell>
+                  <TableCell align="right"><button type="button" onClick={()=>this.getspecificemployee(d.id)} className="btn btn-info"> Get Data</button></TableCell>
                   <TableCell align="right"><Link to={{pathname:'/update' , aboutProps:{myObj: d}}}> Update </Link></TableCell>  
                   <TableCell align="right"><button type="button" onClick={()=>this.delete(d.id)} className="btn btn-danger"> Delete </button></TableCell>   
                 </TableRow>  

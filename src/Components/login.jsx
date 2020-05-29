@@ -1,5 +1,4 @@
 import React from "react";
-import loginImg from "../loginlogo.png";
 import empService from '../Services/EmployeeService'
 import {Link } from "react-router-dom";
 let service = new empService()
@@ -20,6 +19,7 @@ export class Login extends React.Component {
     console.log(this.state);
     
   }  
+  //method for login
   login=(e) => {
     e.preventDefault();
     console.log(this.state);
@@ -43,31 +43,27 @@ export class Login extends React.Component {
   render() 
   {
     return (
-      <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Login</div>
-        <div className="content">
-          <div className="image">
-            <img src={loginImg} />
-          </div>
-          <div className="form">
-            <div className="form-group" >
-              <label htmlFor="Username">Username   </label>
-              <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username}  placeholder="Enter Username" />
-            </div>
-            <div className="form-group" >
-              <label htmlFor="Password">Password    </label>
-              <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password}  placeholder="Enter Password" />
-            </div>
-          </div>
-        </div>
-        <div className="footer">
-          <button type="button" onClick={this.login} className="btn">
-            Sign In
-          </button>
-          <Link to="/register"><button type="button" className="btn">
-            Register
-          </button></Link>
-        </div>
+      <div class="bg-img">
+      <form  class="container">
+        <h2 align="center">Login</h2>
+        
+        <p>Username</p>
+            <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" required/>
+            <p>Password</p>
+            <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password} placeholder="Enter Password"  required/>
+        <input type="checkbox" checked="checked" name="remember" /> Remember me
+      <div className="footer">
+            
+        <button type="button" onClick={this.login} className="btn">
+          Login
+        </button>
+        <Link to="/register"><button type="button" className="btn">
+           Sign Up
+           </button></Link>
+         </div>
+    
+      <span class="psw">Forgot <a href="#">password?</a></span>
+      </form>
       </div>
     );
   }

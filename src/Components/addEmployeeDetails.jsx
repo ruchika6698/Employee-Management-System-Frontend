@@ -7,7 +7,6 @@ export class AddEmployeeDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      ID:'',
       EmployeeName:'',
       Username:'',
       Gender:'',
@@ -29,7 +28,6 @@ export class AddEmployeeDetails extends React.Component {
     e.preventDefault();
     console.log(this.state);
     let requestData ={
-      ID:this.state.ID,
       EmployeeName:this.state.EmployeeName,
       Username:this.state.Username,
       Gender:this.state.Gender,
@@ -39,7 +37,7 @@ export class AddEmployeeDetails extends React.Component {
       WorkingExperience:this.state.WorkingExperience
     }
     service.addEmployeeDetails(requestData).then((data)=>{
-      this.props.history.push("/");
+      this.props.history.push("/dashboard");
       console.log(" Add Employee Details Successfully ", data);
     }).catch((err)=>{
       console.log(err);
@@ -50,16 +48,12 @@ export class AddEmployeeDetails extends React.Component {
   {
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Add Employee Details</div>
+        <div className="header">Add Employee</div>
         <div className="content">
           <div className="image">
             <img src={loginImg} />
           </div>
           <div className="form">
-          <div className="form-group">
-              <label htmlFor="ID">ID</label>
-              <input type="text" name="ID" onChange={this.handleChange} value={this.state.ID} placeholder="Enter Employee ID" />
-            </div>
             <div className="form-group">
               <label htmlFor="EmployeeName">EmployeeName</label>
               <input type="text" name="EmployeeName" onChange={this.handleChange} value={this.state.EmployeeName} placeholder="Enter Employee Name" />

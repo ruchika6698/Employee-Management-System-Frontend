@@ -1,5 +1,5 @@
 import React from "react";
-import loginImg from "../loginlogo.png";
+import "../CSS/register.css";
 import empService from '../Services/EmployeeService'
 let service = new empService()
 
@@ -40,7 +40,7 @@ export class Register extends React.Component {
       WorkingExperience:this.state.WorkingExperience
     }
     service.register(requestData).then((data)=>{
-      this.props.history.push("/addemployee");
+      this.props.history.push("/");
       console.log(" Registration Successful ", data);
       
     }).catch((err)=>{
@@ -50,54 +50,38 @@ export class Register extends React.Component {
   }
   render() 
   {
-    return (
-      <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Create New Account</div>
-        <div className="content">
-          <div className="image">
-            <img src={loginImg} />
-          </div>
-          <div className="form">
-            <div className="form-group">
-              <label htmlFor="EmployeeName">EmployeeName</label>
-              <input type="text" name="EmployeeName" onChange={this.handleChange} value={this.state.EmployeeName} placeholder="Enter Employee Name" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Username">Username</label>
-              <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Password">Password</label>
-              <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password} placeholder="Enter Password" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Gender">Gender</label>
-              <input type="text" name="Gender" onChange={this.handleChange} value={this.state.Gender} placeholder="Enter Gender" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="City">City</label>
+  return (
+ <div className="logo">
+
+  <div class="login-box">
+        <h1>Register</h1>
+          <form>
+            <p>Employee Name</p>
+            <input type="text" name="EmployeeName" onChange={this.handleChange} value={this.state.EmployeeName} placeholder="Enter Employee Name" />
+            <p>Username</p>
+            <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" />
+            <p>Password</p>
+            <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password} placeholder="Enter Password" />
+            <p>Gender</p>
+            <input type="text" name="Gender" onChange={this.handleChange} value={this.state.Gender} placeholder="Enter Gender" />
+            <p>City</p>
               <input type="text" name="City" onChange={this.handleChange} value={this.state.City} placeholder="Enter City" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="EmailID">EmailID</label>
+            <p>EmailID</p>
               <input type="text" name="EmailID" onChange={this.handleChange} value={this.state.EmailID} placeholder="Enter Email Address" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Designation">Designation</label>
+            <p>Designation</p>
               <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="WorkingExperience">WorkingExperience</label>
-              <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Enter Working Experience" />
-            </div>
-          </div>
-        </div>
-        <div className="footer">
-          <button type="button" onClick={this.register} className="btn">
-            Register
-          </button>
-        </div>
-      </div>
+            <p>Designation</p>
+              <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation" />
+            <p>WorkingExperience</p>
+               <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Enter Working Experience" />
+           <div className="footer">
+              <button type="button" onClick={this.register} className="btn btn-success">
+              Register
+               </button>
+               </div>
+          </form>
+    </div>
+  </div>
     );
   }
 }
