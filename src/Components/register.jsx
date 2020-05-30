@@ -70,11 +70,9 @@ export class Register extends React.Component {
               <input type="text" name="EmailID" onChange={this.handleChange} value={this.state.EmailID} placeholder="Enter Email Address" />
             <p>Designation</p>
               <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation" />
-            <p>Designation</p>
-              <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation" />
             <p>WorkingExperience</p>
                <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Enter Working Experience" />
-           <div className="footer">
+           <div className="footer" align="center">
               <button type="button" onClick={this.register} className="btn btn-success">
               Register
                </button>

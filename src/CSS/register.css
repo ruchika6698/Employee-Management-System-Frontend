@@ -8,11 +8,11 @@
   position: relative;
 }
 .login-box{
-    width: 320px;
-    height: 420px;
+    width: 600px;
+    height: 850px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    top: 50%;
+    top: 53%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);

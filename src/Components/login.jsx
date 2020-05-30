@@ -8,7 +8,8 @@ export class Login extends React.Component {
     super(props);
     this.state={
       Username:'',
-      Password:''
+      Password:'',
+       Designation:''
     }
   }
   
@@ -25,7 +26,8 @@ export class Login extends React.Component {
     console.log(this.state);
     let requestData ={
       Username:this.state.Username,
-      Password:this.state.Password
+      Password:this.state.Password,
+      Designation:this.state.Designation
     }
     service.login(requestData).then((json)=>{
       this.props.history.push("/dashboard");
@@ -48,10 +50,12 @@ export class Login extends React.Component {
         <h2 align="center">Login</h2>
         
         <p>Username</p>
-            <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" required/>
+            <input type="text" id="username" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" title="Username is required" required/>
             <p>Password</p>
-            <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password} placeholder="Enter Password"  required/>
-        <input type="checkbox" checked="checked" name="remember" /> Remember me
+            <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password} placeholder="Enter Password"  title="Password is required" required/>
+            <p>Designation</p>
+            <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation"  title="Password is required" required/>
+        <input type="checkbox" /> Remember me
       <div className="footer">
             
         <button type="button" onClick={this.login} className="btn">
