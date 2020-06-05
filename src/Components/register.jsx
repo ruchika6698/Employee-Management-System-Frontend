@@ -72,14 +72,12 @@ export class Register extends React.Component {
               <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation" />
             <p>WorkingExperience</p>
                <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Enter Working Experience" />
-           <div className="footer" align="center">
-              <button type="button" onClick={this.register} className="btn btn-success">
-              Register
-               </button>
-               </div>
+            <div className="footer" align="center">
+              <button type="button" onClick={this.register} className="btn btn-success">Register</button>
+            </div>
           </form>
-    </div>
-  </div>
+        </div>
+      </div>
     );
   }
 }

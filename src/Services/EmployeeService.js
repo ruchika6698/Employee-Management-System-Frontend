@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+//  const apiUrl = 'https://localhost:44343/api/employee';
+
 class Service {
     //API calling for Login
     login(data){
